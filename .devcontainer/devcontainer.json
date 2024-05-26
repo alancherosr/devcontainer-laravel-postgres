@@ -1,0 +1,26 @@
+{
+    "name": "Laravel Development",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "forwardPorts": [8000],
+    "postCreateCommand": "composer install",
+    "remoteUser": "devuser",
+    "workspaceFolder": "/var/www",
+    "mounts": [
+      "source=${localWorkspaceFolder},target=/var/www,type=bind,consistency=cached"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "onecentlin.laravel-blade",
+                "bmewburn.vscode-intelephense-client",
+                "felixfbecker.php-debug",
+                "ryannaddy.laravel-artisan",
+                "mikestead.dotenv"
+            ]
+        }
+    }
+}
